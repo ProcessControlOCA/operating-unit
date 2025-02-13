@@ -15,6 +15,10 @@ class SaleReport(models.Model):
 
     def _select_additional_fields(self):
         res = super()._select_additional_fields()
+        if res is None:
+            res = {}
+
         res.update({
             "operating_unit_id": "s.operating_unit_id"
         })
+        return res
