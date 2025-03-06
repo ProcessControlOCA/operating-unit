@@ -190,12 +190,12 @@ class AccountMove(models.Model):
 
         return super()._post(soft)
 
-    def _check_balanced(self, container):
-        if self.env.context.get("wip"):
-            yield
-        else:
-            with super()._check_balanced(container):
-                yield
+    # def _check_balanced(self, container):
+    #     if self.env.context.get("wip"):
+    #         yield
+    #     else:
+    #         with super()._check_balanced(container):
+    #             yield
 
     @api.constrains("line_ids")
     def _check_ou(self):
