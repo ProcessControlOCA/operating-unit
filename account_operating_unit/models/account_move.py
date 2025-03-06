@@ -190,7 +190,6 @@ class AccountMove(models.Model):
 
         return super()._post(soft)
 
-    @contextmanager
     def _check_balanced(self, container):
         if self.env.context.get("wip"):
             yield
