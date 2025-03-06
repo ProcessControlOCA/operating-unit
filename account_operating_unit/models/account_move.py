@@ -195,7 +195,7 @@ class AccountMove(models.Model):
         if self.env.context.get("wip"):
             yield
         else:
-            with super(TuModelo, self)._check_balanced(container):
+            with super()._check_balanced(container):
                 yield
 
     @api.constrains("line_ids")
